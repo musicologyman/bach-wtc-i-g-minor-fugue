@@ -309,3 +309,94 @@ buildAFugueBass = \relative d {
     \midi { \tempo 4 = 80}
   }
 }
+
+\book {
+  \paper {
+    #(set-paper-size "size 2-0.75")
+    indent = 0 \in
+  }
+  \score {
+    \new Staff
+    \with { midiInstrument = #"harpsichord" }
+    \relative a
+    {
+      \clef bass
+      \global
+      r8 a16 bes c8 bes16 a bes4
+    }
+    \layout {
+      \context {
+        \Staff
+        \remove Time_signature_engraver
+      }
+    }
+    \midi { \tempo 4 = 80 }
+  }
+}
+
+\book {
+  \paper {
+    #(set-paper-size "size 2-0.75")
+    indent = 0 \in
+  }
+  \score {
+    \new Staff
+    \with { midiInstrument = #"harpsichord" }
+    \relative a
+    { \clef bass 
+      \global
+      r8 a16 g f8 g16 a bes8 }
+    \layout {
+      \context {
+        \Staff
+        \remove Time_signature_engraver
+      }
+    }
+    \midi { \tempo 4 = 80 }
+  }
+}
+
+\book {
+  \paper {
+    #(set-paper-size "size 2-0.75")
+    indent = 0 \in
+  }
+  \score {
+    \new Staff
+    \with { midiInstrument = #"harpsichord" }
+    \relative e'
+    { \global s2 r8 e16 f g8 f16 e f8 }
+    \layout {
+      \context {
+        \Staff
+        \remove Time_signature_engraver
+      }
+    }
+    \midi { \tempo 4 = 80 }
+  }
+}
+
+\book {
+  \paper {
+    #(set-paper-size "size 5-0.75")
+    indent = 0 \in
+  }
+  \score {
+    \new Staff
+    \with { midiInstrument = #"harpsichord" }
+    \relative e'
+    {
+      \global
+      s2 r8 e16 f g8 f16 e |
+      f8 g16 a bes8 a16 g a8 bes16 c d8 c16 bes |
+      c4
+    }
+    \layout {
+      \context {
+        \Staff
+        \remove Time_signature_engraver
+      }
+    }
+    \midi { \tempo 4 = 80 }
+  }
+}
