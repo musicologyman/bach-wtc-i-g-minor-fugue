@@ -4,6 +4,8 @@
 *.mp3
 *.pdf
 *.png
+*.ps
 *.swp
 audio
+images
 .DS_Store
