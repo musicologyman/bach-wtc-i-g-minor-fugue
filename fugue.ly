@@ -474,3 +474,36 @@ buildAFugueBass = \relative d {
     \midi { \tempo 4 = 80 }
   }
 }
+
+\book {
+  \paper {
+    #(set-paper-size "size 6-0.75")
+    indent = 0 \in
+  }
+  \score {
+    \new Staff
+    \with { midiInstrument = #"harpsichord" } {
+      \relative g' {
+        \global
+        \partial 2
+        r8 g bes d, |
+        \override TextScript #'color = #red
+        cis4 d r8 e16-\markup { \postscript #(ps-rect 7 -1.5 8 16.5 0.25) } 
+          \override TextScript #'color = #blue
+          f-\markup { \postscript #(ps-rect 6.5 10 6.5 17.5 0.25) }  g8 f16 e |
+        f8 g16 a bes8 a16 g 
+          \override TextScript #'color = #darkcyan
+          a8-\markup { \postscript #(ps-rect 6.5 -0.5 6.5 18 0.25) } 
+          bes16 c d8 c16 bes |
+        c8
+      }
+    }
+    \layout {
+      \context {
+        \Staff
+        \remove "Time_signature_engraver"
+      }
+    }
+    \midi { \tempo 4 = 80 }
+  }
+}
