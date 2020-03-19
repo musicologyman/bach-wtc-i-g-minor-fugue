@@ -1,6 +1,7 @@
 \version "2.18.2"
 
 \include "../lilypond-page-sizes/paper-sizes.ily"
+\include "../lilypond-functions/functions.ily"
 
 \header {
   tagline = ""
@@ -401,6 +402,75 @@ buildAFugueBass = \relative d {
         \remove Time_signature_engraver
       }
     }
+    \midi { \tempo 4 = 80 }
+  }
+}
+
+\book {
+  \paper {
+    #(set-paper-size "size 1.75-0.75")
+    indent = 0 \in
+  }
+  \score {
+    \new Staff 
+      \with { midiInstrument = #"harpsichord" }
+      \relative a {
+      \clef bass
+      \global
+      r8 a16 b c8 bes16 a bes4
+    }
+    \layout {
+      \context {
+        \Staff
+        \remove Time_signature_engraver
+      }
+    }
+    \midi { \tempo 4 = 80}
+  }
+}
+
+\book {
+  \paper {
+    #(set-paper-size "size 1.75-0.75")
+    indent = 0 \in
+  }
+  \score {
+    \new Staff 
+      \with { midiInstrument = #"harpsichord" }
+      \relative a {
+      \clef bass
+      \global
+      r8 a16 g f8 g16 a bes8
+    }
+    \layout {
+      \context {
+        \Staff
+        \remove Time_signature_engraver
+      }
+    }
+    \midi { \tempo 4 = 80 }
+  }
+}                   
+
+\book {
+  \paper {
+    #(set-paper-size "size 4-0.75")
+    indent = 0 \in
+  }
+  \score {
+    \new Staff
+    \with { midiInstrument = #"harpsichord" }
+    {
+      \relative d' {
+        \clef bass
+        \global
+        r8 d es g, fis4 g |
+        \override TextScript #'color = #red
+        r8 a16-\markup { \postscript #(ps-rect 7 -1 8 15 0.25) }
+           bes c8 bes16 a bes4 g
+      }
+    }
+    \layout { }
     \midi { \tempo 4 = 80 }
   }
 }
