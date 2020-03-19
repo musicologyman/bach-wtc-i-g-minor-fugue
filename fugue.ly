@@ -101,7 +101,7 @@ leftHand = \relative d {
       \with { midiInstrument = #"harpsichord" }
       \leftHand
     >>
-    \layout {}
+    \layout { }
     \midi { \tempo 4 = 80 }
   }
 }
@@ -130,7 +130,7 @@ leftHand = \relative d {
 
 \book {
   \paper {
-    #(set-paper-size "size 4.5-0.75")
+    #(set-paper-size "size 6-0.75")
     indent = 0 \in
   }
   \score {
@@ -141,7 +141,8 @@ leftHand = \relative d {
         \partial 2
         r8 g bes d, |
         cis4 d r8 e16 f g8 f16 e |
-        f8 g16 a bes8 a16 g a8
+        f8 g16 a bes8 a16 g a8 bes16 c d8 c16 bes |
+        c8
       }
     }
     \layout {
@@ -183,7 +184,7 @@ leftHand = \relative d {
 
 \book {
   \paper {
-    #(set-paper-size "size 4.5-0.75")
+    #(set-paper-size "size 6-0.75")
     indent = 0 \in
   }
   \score {
@@ -196,7 +197,8 @@ leftHand = \relative d {
         \partial 2
         r8 g bes d, |
         cis4 d r8 e16 f g8 f16 e |
-        f8 g16 a bes8 a16 g a8
+        f8 g16 a bes8 a16 g a8 bes16 c d8 c16 bes |
+        c8
       }
     }
     \layout {
@@ -343,9 +345,11 @@ buildAFugueBass = \relative d {
     \new Staff
     \with { midiInstrument = #"harpsichord" }
     \relative a
-    { \clef bass 
+    {
+      \clef bass
       \global
-      r8 a16 g f8 g16 a bes8 }
+      r8 a16 g f8 g16 a bes8
+    }
     \layout {
       \context {
         \Staff

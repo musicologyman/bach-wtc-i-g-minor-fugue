@@ -1,7 +1,9 @@
-*.mid
-*.png
-*.midi
 *.eps
-*.swp
+*.mid
+*.midi
 *.mp3
+*.pdf
+*.png
+*.swp
 audio
+.DS_Store
