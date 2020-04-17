@@ -26,13 +26,15 @@ global = {
   }
   \score {
     <<
-      \new Staff \relative g' { 
+      \new Staff \with { midiInstrument = #"harpsichord" }
+        \relative g' { 
         \global 
         \partial 2 
         r8 g bes d, |
         cis4 d r8 e16 f g8 f16 e 
         f8 }
-      \new Staff \relative bes {
+      \new Staff \with { midiInstrument = #"harpsichord" }
+        \relative bes {
        \clef bass
        \global
        \partial 2 
@@ -75,7 +77,5 @@ global = {
        d4.
       }
     >>
-    \layout {}
-    \midi { \tempo 4 = 80 }
   }
 }
